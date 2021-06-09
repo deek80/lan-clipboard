@@ -123,6 +123,25 @@ const App = () => {
         onClose={hideToast}
         message={toastMessage}
       />
+      <Button
+        onClick={async () => {
+          console.log("prompt for write");
+          const response = await navigator.permissions.query({
+            name: "clipboard-write",
+          });
+          console.log("response", response);
+        }}
+      >
+        Prompt for Clipboard Write
+      </Button>
+      <Button
+        onClick={async () => {
+          console.log("try write");
+          await navigator.clipboard.writeText("blah 123");
+        }}
+      >
+        Try Clipboard Write
+      </Button>
     </div>
   );
 };
