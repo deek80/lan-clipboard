@@ -37,6 +37,7 @@ const App = () => {
   const [localText, setLocalText] = useState("");
   const [serverText, setServerText] = useState("empty");
   const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
 
   const handleLocalTextChange = e => {
     setLocalText(e.target.value);
@@ -49,8 +50,14 @@ const App = () => {
     setShowToast(false);
   };
 
+  const toast = text => {
+    setToastMessage(text);
+    setShowToast(true);
+  };
+
   const handleSend = async () => {
     setServerText(await updateRemoteClipboard(localText));
+    toast("Sent!");
   };
 
   const _copyListener = e => {
@@ -63,7 +70,7 @@ const App = () => {
   const handleCopy = () => {
     document.addEventListener("copy", _copyListener, true);
     document.execCommand("copy");
-    setShowToast(true);
+    toast("Copied!");
   };
 
   useEffect(() => {
@@ -114,7 +121,7 @@ const App = () => {
         open={showToast}
         autoHideDuration={2000}
         onClose={hideToast}
-        message="Copied to clipboard!"
+        message={toastMessage}
       />
     </div>
   );
