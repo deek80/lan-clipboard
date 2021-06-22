@@ -11,3 +11,12 @@ Update 2021-06-18:
     because then you can use the fancy navigator.clipboard stuff
   - ok, I've added a firebase version. this might be easier since
     it won't depend on my raspi. now that takes care of the https part too
+Update 2021-06-22:
+  - one thing this complicates is the whole sharing thing...like I want
+    a clipboard/message board/whatever for the whole house. but I guess
+    you could have a list of people with which the clipboard is shared.
+    ...or maybe by ip? or....
+  - I'm deleting the fastapi stuff (saving it as an example in a
+    different repo) and focusing just on the javascript side
+
+
