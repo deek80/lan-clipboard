@@ -5,7 +5,7 @@ import {
   signInWithGoogle,
   signInWithGoogleReselect,
   signOut,
-} from "../services/firebase";
+} from "@deek80/firebase";
 
 const menuButton = (text, action) => (
   <Button color="inherit" onClick={action}>

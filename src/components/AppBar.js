@@ -6,7 +6,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import LoginButtons from "./LoginButtons";
-import {useAuth} from "../services/firebase";
+import {useAuth} from "@deek80/firebase";
 
 const useStyles = makeStyles({
   grow: {
