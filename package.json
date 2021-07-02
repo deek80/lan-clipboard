@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@deek80/firebase": "^0.0.1",
+    "@deek80/firebase-hooks": "file:/home/donaldpatterson/dev/firebase/deek80-firebase-hooks-0.0.1.tgz",
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.4",
@@ -24,9 +24,9 @@
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "gh-pages": "^3.2.2",
+    "gh-pages": "^3.2.3",
     "npm-check-updates": "^11.7.1",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.2"
   },
   "prettier": {
     "arrowParens": "avoid",

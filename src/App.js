@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Box, Button, makeStyles, Snackbar, TextField} from "@material-ui/core";
 import {GetApp as DownArrow, Publish as UpArrow} from "@material-ui/icons";
 import AppBar from "./components/AppBar";
-import {useData} from "@deek80/firebase";
+import {useData} from "@deek80/firebase-hooks";
 
 const useStyles = makeStyles(theme => ({
   root: {
