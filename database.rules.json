@@ -7,8 +7,10 @@
           ".write": "auth != null && auth.uid == $uid"
         },
         "inbox": {
-          ".read": "auth != null && auth.uid == $uid",
-          ".write": "auth != null"
+          "$fromId": {
+            ".read": "auth != null && auth.uid == $uid",
+            ".write": "auth != null && (auth.uid == $fromId || auth.uid == $uid)"
+          }
         }
       }
     }

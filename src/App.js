@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Box, Button, makeStyles, Snackbar, TextField} from "@material-ui/core";
 import {GetApp as DownArrow, Publish as UpArrow} from "@material-ui/icons";
 import AppBar from "./components/AppBar";
-import {useData} from "@deek80/firebase-hooks";
+import {useData} from "./firebase";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,7 +18,10 @@ const App = () => {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [localText, setLocalText] = useState("");
-  const [serverText, serverTextRef] = useData("clipboard");
+
+  const [serverText, serverError, serverTextRef] = useData(
+    user => `users/${user.uid}/private/clipboard`
+  );
 
   const handleLocalTextChange = e => {
     setLocalText(e.target.value);
@@ -73,7 +76,7 @@ const App = () => {
           <TextField
             className={classes.gapLeft}
             label="Remote clipboard"
-            value={serverText || ""}
+            value={serverText || (serverError ? "Error fetching text" : "")}
             fullWidth
             inputProps={{readOnly: true}}
           />
